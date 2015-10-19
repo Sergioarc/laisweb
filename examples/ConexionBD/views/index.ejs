@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="mean">
 	<head>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -14,11 +17,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 		<!--AngularJS Route -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+
+    	<script type="text/javascript" src="controlador.js"></script>
 	</head>
 	<title>
 		MEAN
 	</title>
 	<body>
+		<center>
+			<h1>INICIO</h1>
+			<h2>MEAN</h2>
+		</center>
 		<ng-view></ng-view>
 	</body>
 </html>

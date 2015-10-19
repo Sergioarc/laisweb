@@ -26,10 +26,12 @@ router.post('/agregarUsuarios',function(req,res,next){
 	console.log(req.body);
 	Todo.create(req.body, function(err, post){
 		if (err){ 
-			console.log(err);
+			console.log("Ya esta registrado este nombre");
+			res.send("Ya esta registrado este nombre");
+		}else{
+			console.log("creado");
+			res.send("Nuevo registro");
 		}
-		console.log("creado");
-		res.render("registrar");	
 	});
 });
 
