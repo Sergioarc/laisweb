@@ -7,12 +7,30 @@ var mongoose = require('mongoose');
 var Todo = require('../db/models/Todo.js');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/usuarios', function(req, res, next) {
 	console.log("Hola mundo");
-	Todo.find(function (err,todos){
+	Todo.find(function (err,usuarios){
 		if(err) return next(err);
-		res.json(todos);
-	})
+		res.json(usuarios);
+	});
+});
+
+/*Pagina de registro*/
+router.get('/agregarUsuarios',function(req,res,next){
+	res.render('registrar');
+});
+
+/* POST users*/ 
+router.post('/agregarUsuarios',function(req,res,next){
+	console.log("Cuerpo");
+	console.log(req.body);
+	Todo.create(req.body, function(err, post){
+		if (err){ 
+			console.log(err);
+		}
+		console.log("creado");
+		res.render("registrar");	
+	});
 });
 
 module.exports = router;

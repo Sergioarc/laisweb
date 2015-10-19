@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var TodoSchema = new mongoose.Schema({
-  name: String,
-  email: String
+  nombre: {type: String, index:{unique:true}},
+  pass: {type: String}
 });
 
-module.exports = mongoose.model('Todo', TodoSchema);
+module.exports = mongoose.model('usuarios', TodoSchema);

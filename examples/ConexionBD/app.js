@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/ConexionBD', function(err) {
+mongoose.connect('mongodb://localhost/laisWebDB', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/todos', users);
+app.use('/baseDatos', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
